@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RepoService } from 'src/app/repo.service';
 import { VideoEntry } from 'src/app/video-entry';
-import { Observable } from 'rxjs';
 
 class Crumb {
     label: string;
@@ -18,7 +17,7 @@ export class VideoBrowserComponent implements OnInit {
 
     path:    string;
     entries: VideoEntry[];
-    crumbs:  Observable<Crumb[]>;
+    crumbs:  Crumb[];
 
     constructor(
         private repoService: RepoService,
@@ -26,11 +25,11 @@ export class VideoBrowserComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.path = this.route.snapshot.url.join('/');
-        this.getSources();
+        this.route.url.subscribe(_ => this.getListing());
     }
 
-    getSources() {
+    getListing() {
+        this.path = this.route.snapshot.url.join('/');
         this.repoService.browseVideo(this.path)
             .subscribe(folder => {
                 this.entries = folder.entries;
