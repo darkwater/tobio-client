@@ -1,0 +1,13 @@
+<div>
+    <div class="browser-crumbs">
+        <ng-container *ngFor="let crumb of crumbs; last as isLast">
+            <a routerLink="{{ crumb.path }}">
+                {{ crumb.label }}
+            </a>
+            <mat-icon *ngIf="!isLast">arrow_right</mat-icon>
+        </ng-container>
+    </div>
+    <div class="source-entries">
+    </div>
+    <mat-divider></mat-divider>
+</div>

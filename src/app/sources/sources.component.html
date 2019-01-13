@@ -1,0 +1,7 @@
+<div *ngFor="let source of sources">
+    <h3>{{ source }}</h3>
+    <div class="source-entries">
+        <a mat-raised-button routerLink="{{ source.toLowerCase() }}">More</a>
+    </div>
+    <mat-divider></mat-divider>
+</div>
