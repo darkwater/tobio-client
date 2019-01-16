@@ -15,9 +15,11 @@ class Crumb {
 })
 export class VideoBrowserComponent implements OnInit {
 
-    path:    string;
-    entries: VideoEntry[];
-    crumbs:  Crumb[];
+    path:        string;
+    entry:       VideoEntry;
+    crumbs:      Crumb[];
+    crumbsEmpty: boolean;
+    children:    VideoEntry[];
 
     constructor(
         private repoService: RepoService,
@@ -32,7 +34,8 @@ export class VideoBrowserComponent implements OnInit {
         this.path = this.route.snapshot.url.join('/');
         this.repoService.browseVideo(this.path)
             .subscribe(folder => {
-                this.entries = folder.entries;
+                this.entry    = folder.entry;
+                this.children = folder.children;
 
                 let crumbs = [];
                 var path = '.';
@@ -42,7 +45,8 @@ export class VideoBrowserComponent implements OnInit {
                     path += '/..';
                 }
 
-                this.crumbs = crumbs;
+                this.crumbs      = crumbs;
+                this.crumbsEmpty = crumbs.length == 0;
             });
     }
 

@@ -12,7 +12,14 @@ export class RepoService {
 
     constructor(private http: HttpClient) { }
 
-    browseVideo(path: string): Observable<VideoEntry> {
-        return this.http.get<VideoEntry>(`${this.repoUrl}/video/${path}`);
+    browseVideo(path: string): Observable<BrowseVideoResponse> {
+        let url = `${this.repoUrl}/video/${path}`;
+        return this.http.get<BrowseVideoResponse>(url);
     }
+}
+
+export class BrowseVideoResponse {
+    entry?:   VideoEntry;
+    crumbs:   string[];
+    children: VideoEntry[];
 }

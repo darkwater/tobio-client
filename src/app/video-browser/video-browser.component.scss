@@ -3,7 +3,15 @@
 
     a {
         display: inline-block;
-        padding: 7px 10px;
+        padding: 7px 5px;
         vertical-align: text-bottom;
+
+        &:nth-of-type(1) {
+            padding: 0;
+        }
+
+        &:nth-of-type(2) {
+            margin-left: 10px;
+        }
     }
 }

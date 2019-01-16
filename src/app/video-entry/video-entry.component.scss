@@ -1,4 +1,11 @@
 .entry {
     display: block;
-    padding: 10px 20px;
+    padding: 10px 20px 16px;
+
+    .big-label {
+        display: block;
+        margin: 10px 0px;
+        font-weight: 300;
+        font-size: 1.5em;
+    }
 }

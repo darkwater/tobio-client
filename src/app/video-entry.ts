@@ -1,13 +1,11 @@
 export class VideoEntry {
-    crumbs?:  string[];
-    entries?: VideoEntry[];
-
-    key:   string;
-    label: string;
-
-    folderType?: string;
-    numEntries?: number;
-
-    fileType?: string;
+    entryType: string;
+    key:       string;
+    label:     string;
     url?:      string;
+    extra?:    VideoEntryExtra;
+}
+
+export class VideoEntryExtra {
+    progress: number;
 }
