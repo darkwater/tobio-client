@@ -13,5 +13,16 @@
         &:nth-of-type(2) {
             margin-left: 10px;
         }
+
+        &.parentLink {
+            float: right;
+            margin: -5px -20px;
+            padding: 8px 10px;
+
+            mat-icon {
+                position: relative;
+                top: 1px;
+            }
+        }
     }
 }

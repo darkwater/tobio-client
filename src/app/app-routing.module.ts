@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { VideoBrowserComponent } from 'src/app/video-browser/video-browser.component';
+import { MediaBrowserComponent } from 'src/app/media-browser/media-browser.component';
 
 const routes: Routes = [
-    { path: "video", children: [
-        { path: "**", component: VideoBrowserComponent },
+    { path: "browse", children: [
+        { path: "**", component: MediaBrowserComponent },
     ]},
 ];
 

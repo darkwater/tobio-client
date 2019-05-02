@@ -1,19 +1,24 @@
 <div>
     <ng-container *ngIf="!crumbsEmpty">
         <div class="browser-crumbs">
-            <a routerLink="/video">
+            <a routerLink="/browse">
                 <mat-icon>folder_open</mat-icon>
             </a>
+
             <ng-container *ngFor="let crumb of crumbs; last as isLast">
                 <a [routerLink]="crumb.path">
                     {{ crumb.label }}
                 </a>
                 <mat-icon *ngIf="!isLast">arrow_right</mat-icon>
             </ng-container>
+
+            <a *ngIf="path != ''" class="parentLink" routerLink="..">
+                <mat-icon>arrow_upward</mat-icon>
+            </a>
         </div>
         <mat-divider></mat-divider>
     </ng-container>
     <div class="source-entries">
-        <app-video-entry *ngFor="let entry of children" [entry]="entry"></app-video-entry>
+        <app-media-entry *ngFor="let entry of children" [entry]="entry"></app-media-entry>
     </div>
 </div>

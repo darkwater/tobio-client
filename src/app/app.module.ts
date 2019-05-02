@@ -10,16 +10,16 @@ import { SourcesComponent } from './sources/sources.component';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
-import { VideoBrowserComponent } from './video-browser/video-browser.component';
-import { VideoEntryComponent } from './video-entry/video-entry.component';
+import { MediaBrowserComponent } from './media-browser/media-browser.component';
+import { MediaEntryComponent } from './media-entry/media-entry.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         SourcesComponent,
         NavComponent,
-        VideoBrowserComponent,
-        VideoEntryComponent,
+        MediaBrowserComponent,
+        MediaEntryComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,25 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { VideoEntry } from 'src/app/video-entry';
+import { MediaEntry, BrowseResponse } from 'src/app/media-entry';
 
 @Injectable({
     providedIn: 'root'
 })
 export class RepoService {
 
-    private repoUrl = "http://localhost:5958";
+    private repoUrl = "http://172.24.0.3:5958";
 
     constructor(private http: HttpClient) { }
 
-    browseVideo(path: string): Observable<BrowseVideoResponse> {
-        let url = `${this.repoUrl}/video/${path}`;
-        return this.http.get<BrowseVideoResponse>(url);
+    browse(path: string): Observable<BrowseResponse> {
+        let url = `${this.repoUrl}/browse/${path}`;
+        return this.http.get<BrowseResponse>(url);
     }
-}
-
-export class BrowseVideoResponse {
-    entry?:   VideoEntry;
-    crumbs:   string[];
-    children: VideoEntry[];
 }
