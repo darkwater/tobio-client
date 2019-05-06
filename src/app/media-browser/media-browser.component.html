@@ -1,9 +1,9 @@
 <div>
     <ng-container *ngIf="!crumbsEmpty">
         <div class="browser-crumbs">
-            <a routerLink="/browse">
+            <!--a routerLink="/browse">
                 <mat-icon>folder_open</mat-icon>
-            </a>
+            </a-->
 
             <ng-container *ngFor="let crumb of crumbs; last as isLast">
                 <a [routerLink]="crumb.path">

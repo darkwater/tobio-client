@@ -9,6 +9,7 @@ export class Crumb {
 }
 
 export class MediaEntry {
+    folder:   boolean;
     crumbs:   string;
     filename: string;
 }

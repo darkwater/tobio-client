@@ -1,4 +1,6 @@
 <a [routerLink]="entry.filename" class="entry">
+    <mat-icon *ngIf="entry.folder">folder_open</mat-icon>
+    <mat-icon *ngIf="!entry.folder">movie</mat-icon>
     {{ entry.filename }}
 </a>
 

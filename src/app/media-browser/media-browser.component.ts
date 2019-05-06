@@ -37,7 +37,13 @@ export class MediaBrowserComponent implements OnInit {
                     }
                 });
 
-                this.children = folder.children;
+                this.children = folder.children.sort((a, b) => {
+                    if (a.folder != b.folder) {
+                        return -a.folder - -b.folder;
+                    }
+
+                    return a.filename.localeCompare(b.filename);
+                });
             });
     }
 
